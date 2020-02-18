@@ -1,0 +1,11 @@
+.header-content{
+    display: flex;
+    justify-content: space-around;
+}
+.header-content span{
+    display: flex;
+    align-items: center;
+    span{
+        margin-left: 5px;
+    }
+}

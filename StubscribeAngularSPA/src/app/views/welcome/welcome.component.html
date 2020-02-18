@@ -1,0 +1,12 @@
+<div class="header" style="margin-bottom: 10px;">
+    <h1 style="text-align: center;">Welcome{{', ' + user.name}}!</h1>
+    <div class="header-content">
+        <span><mat-icon class="material-icons">today</mat-icon><span>{{ " " + todayStr }}</span></span>
+        <span>Payments left this month: 2</span>
+    </div>
+</div>
+<mat-divider></mat-divider>
+
+<app-sub-button *ngFor="let sub of subs" [sub]="sub"></app-sub-button>
+<app-new-sub-button (click)="onAdd()"></app-new-sub-button>
+<app-value></app-value>

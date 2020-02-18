@@ -1,0 +1,20 @@
+<div class="card-container">
+    <mat-card [ngClass]="sub.name" [style.width]="'auto'" [class.mat-elevation-z8]="" [class.mat-elevation-z2]="">
+        <mat-card-header>
+            <div mat-card-avatar class="logo"></div>
+            <mat-card-title>{{ sub.name }}</mat-card-title>
+            <mat-card-subtitle>{{ customSubtitle }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content style="display: flex; justify-content: space-around;">
+            <div mat-icon-button><fa-icon [icon]="faCreditCard"></fa-icon><span>{{ card }}</span></div>
+            <div><fa-icon [icon]="faCalendarTimes"></fa-icon><span>{{ date }}</span></div>
+            <div><fa-icon [icon]="faUserCircle"></fa-icon><span>{{ membersCount }}</span></div>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-actions>
+            <button mat-button [ngStyle]="{'color': sub.isActive ? 'green':'red'}" class="mat-app-background status">{{ sub.isActive ? 'active':'inactive' }}</button>
+            <button mat-button>edit <fa-icon [icon]="faEdit"></fa-icon></button>
+            <button mat-button>share <fa-icon [icon]="faShareAlt"></fa-icon></button>
+        </mat-card-actions>
+    </mat-card>
+</div>

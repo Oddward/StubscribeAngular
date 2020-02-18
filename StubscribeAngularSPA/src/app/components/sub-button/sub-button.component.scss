@@ -1,0 +1,53 @@
+mat-card{
+    text-align: center;
+}
+.mat-card-avatar{
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+}
+mat-card-content div{
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    text-align: center;
+    align-items: center;
+    span{
+        margin-left: 5px;
+    }
+}
+.mat-card-avatar{
+  border-radius: 0; // overwrite material styling
+}
+.card-container{
+    padding: 20px;
+    width: auto;
+    display: inline-block;
+}
+.status{
+  background-color: white;
+}
+.Spotify{
+    background-color: #84bd00;
+    color: white;
+}
+.Spotify .logo{
+    background-image: url('~/assets/Spotify_Icon_RGB_White.png');
+}
+.Netflix{
+    background-color: black;
+    color: #d81f26;
+}
+.Netflix .logo{
+    background-image: url('~/assets/netflix-logo.png');
+}
+.Youtube.Premium{
+  background-color: #c4302b;
+  color: white;
+}
+.Youtube.Premium .logo{
+  background-image: url('~/assets/yt_icon_mono_dark.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Add Subscription</h1>
+<div mat-dialog-content>
+  <form novalidate>
+    <section>
+      <mat-form-field appearance="outline">
+        <mat-label>Subscription Service</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let unit of data" >{{ unit.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" >
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Most Recent Subscription Date</mat-label>
+        <input matInput [matDatepicker]="picker" placeholder="Select date" form>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <!-- <button matSuffix [matDatepickerToggle]="picker"></button> -->
+        <mat-datepicker #picker [startAt]="startDate"></mat-datepicker>
+      </mat-form-field>
+      <!-- <mat-form-field appearance="outline">
+
+      </mat-form-field> -->
+    </section>
+  </form>
+</div>
+<div matDialogActions>
+  <button mat-flat-button color="warning" (click)="onCancel()">Cancel</button>
+  <button mat-flat-button color="primary" [matDialogClose]>Save</button>
+</div>

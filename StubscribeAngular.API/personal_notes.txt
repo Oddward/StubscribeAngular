@@ -1,0 +1,3 @@
+Removed "https://localhost:5001;" from /Properties/launchSettings.json - "StubscribeAngular.API": "applicationUrl": "https://localhost:5001;http://localhost:5000" to make it easier for development (not listen on 2 ports).
+appsettings.Development.json:
+    changed "Microsoft": "Warning" to "Information", added "System": "Information" to see more in terminal from log

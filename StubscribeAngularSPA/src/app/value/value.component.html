@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-header color="primary" style="background-color: crimson;color: white;padding: 10px;">
+        <mat-card-title>Weather Forecast</mat-card-title>
+        <mat-card-subtitle>Forecast from ASP.Net Core App~</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content style="padding: 30px;">
+        <mat-list  role="list">
+            <mat-list-item role="listitem" *ngFor="let value of values">
+                <!-- <p matLine>{{"Date: " + value.date}}</p>
+                <p matLine>{{"Temperate (C): " + value.temperatureC}}</p>
+                <p matLine>{{"Summary: " + value.summary}}</p> -->
+                <p matLine>{{ value.name }}</p>
+                <mat-divider [inset]="true"></mat-divider>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+    <mat-card-actions class="m-4">
+        <button mat-button color="accent">Refresh</button>
+        <button mat-raised-button>Action butt</button>
+        <button mat-flat-button color="primary">Primary action</button>
+        <button>Change location</button>
+        <button mat-fab class="float-right">Fab?</button>
+    </mat-card-actions>
+</mat-card>
