@@ -5,6 +5,7 @@ import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarTimes } from '@fortawesome/free-solid-svg-icons';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { HttpClient } from '@angular/common/Http';
 
 // export interface Sub {
 //   id: 1;
@@ -25,7 +26,7 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 })
 export class SubButtonComponent implements OnInit {
   @Input() sub: any;
-  members: any[]
+  @Input() members: any;
   membersCount: number;
   customSubtitle: string;
   card: string;
@@ -41,13 +42,13 @@ export class SubButtonComponent implements OnInit {
   faCreditCard = faCreditCard;
   faCalendarTimes = faCalendarTimes;
 
-  constructor( public membersService: MembersService ) {
+  constructor( public http: HttpClient, public membersService: MembersService ) {
     // this.sub.name = 'Spotify';
     // this.subStyle = this.sub.toLocaleLowerCase;
     this.customSubtitle = 'Me and the boys';
     this.card = '*420';
     this.date = 30 - this.endDate.getDate();
-    this.membersCount = this.getMemberCount();
+    // this.membersCount = this.getMemberCount();
     // this.status = true;
    }
 

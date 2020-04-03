@@ -13,6 +13,7 @@ const httpOptions = {
 })
 export class MembersService {
   membersUrl = 'http://localhost:5000/api/Members/';
+  members: any;
 
   constructor(private http: HttpClient) { }
 
@@ -22,10 +23,10 @@ export class MembersService {
     return this.http.get(url);
   }
 
-  // GetMemberCount(id: number) {
-  //   const url: string = this.membersUrl +  id;
-  //   let members = this.http.get(url);
+  GetMemberCount(id: number) {
+    const url: string = this.membersUrl +  id;
+    const members = this.http.get(url);
 
-  //   return this.http.get(url);
-  // }
+    return members;
+  }
 }

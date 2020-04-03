@@ -7,6 +7,6 @@
 </div>
 <mat-divider></mat-divider>
 
-<app-sub-button *ngFor="let sub of subs" [sub]="sub"></app-sub-button>
+<app-sub-button *ngFor="let sub of subs" [sub]="sub" [members]="getMembers(sub.id)"></app-sub-button>
 <app-new-sub-button (click)="onAdd()"></app-new-sub-button>
 <app-value></app-value>

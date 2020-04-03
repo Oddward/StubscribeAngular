@@ -8,7 +8,7 @@
         <mat-card-content style="display: flex; justify-content: space-around;">
             <div mat-icon-button><fa-icon [icon]="faCreditCard"></fa-icon><span>{{ card }}</span></div>
             <div><fa-icon [icon]="faCalendarTimes"></fa-icon><span>{{ date }}</span></div>
-            <div><fa-icon [icon]="faUserCircle"></fa-icon><span>{{ membersCount }}</span></div>
+            <div><fa-icon [icon]="faUserCircle"></fa-icon><span>{{ getMemberCount() }}</span></div>
         </mat-card-content>
         <mat-divider></mat-divider>
         <mat-card-actions>

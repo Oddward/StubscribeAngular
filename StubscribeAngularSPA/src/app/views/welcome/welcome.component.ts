@@ -1,3 +1,4 @@
+import { MembersService } from './../../members.service';
 import { HttpClient } from '@angular/common/Http';
 import { NewSubFormComponent } from './new-sub-form/new-sub-form.component';
 import { Component, OnInit } from '@angular/core';
@@ -31,12 +32,13 @@ export class WelcomeComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private http: HttpClient,
-    public subscriptions: SubscriptionsService ) {
+    public subscriptions: SubscriptionsService,
+    public members: MembersService ) {
     this.todayStr = this.today.toLocaleDateString();
   }
 
   ngOnInit() {
-    this.getValues();
+    this.getSubs();
   }
 
   onAdd(): void {
@@ -50,7 +52,7 @@ export class WelcomeComponent implements OnInit {
       this.http.post('http://localhost:5000/api/Subcriptions', result));
   }
 
-  getValues() {
+  getSubs() {
     this.http.get('http://localhost:5000/api/subscriptions').subscribe((result: any) => {
       this.subs = result; },
       error => console.log(error));
@@ -58,5 +60,9 @@ export class WelcomeComponent implements OnInit {
     this.http.get('http://localhost:5000/api/subservices').subscribe((result: any) => {
       this.services = result; },
       error => console.log(error));
+  }
+
+  getMembers( subId: any ) {
+    this.members.getMembers(subId);
   }
 }
